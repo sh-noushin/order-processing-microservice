@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="src/backend/OrderProcessing.Api/OrderProcessing.Api.csproj" Id="c8087929-6eca-411f-b272-a6d38ae0950a" />
   <Project Path="src/backend/OrderProcessing.Functions/OrderProcessing.Functions.csproj" Id="fcb4a000-8c7b-42f6-8b79-af51a0ff1ce7" />
 </Solution>
