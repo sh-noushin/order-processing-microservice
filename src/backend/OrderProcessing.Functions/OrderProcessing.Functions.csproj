@@ -21,7 +21,4 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OrderProcessing.Core\OrderProcessing.Core.csproj" />
-  </ItemGroup>
 </Project>
