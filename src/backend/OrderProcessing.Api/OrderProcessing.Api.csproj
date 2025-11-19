@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\OrderProcessing.Infrastructure\OrderProcessing.Infrastructure.csproj" />
     <ProjectReference Include="..\OrderProcessing.Core\OrderProcessing.Core.csproj" />
   </ItemGroup>
 
