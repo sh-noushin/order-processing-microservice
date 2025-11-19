@@ -30,13 +30,26 @@ namespace OrderProcessing.Core.Services
             if (items.Any(i => i.UnitPrice < 0))
                 throw new ArgumentException("All items must have UnitPrice >= 0.", nameof(items));
 
+            var orderId = Guid.NewGuid();
+
+            var orderItems = items
+                .Select(input => new OrderItem
+                {
+                    Id = input.Id == Guid.Empty ? Guid.NewGuid() : input.Id,
+                    OrderId = orderId,
+                    ProductId = input.ProductId,
+                    Quantity = input.Quantity,
+                    UnitPrice = input.UnitPrice
+                })
+                .ToList();
+
             var order = new Order
             {
-                Id = Guid.NewGuid(),
+                Id = orderId,
                 CustomerId = customerId,
                 CreatedAtUtc = DateTime.UtcNow,
                 Status = OrderStatus.Pending,
-                Items = items.ToList()
+                Items = orderItems
             };
 
             await _orderRepository.AddAsync(order, cancellationToken);
